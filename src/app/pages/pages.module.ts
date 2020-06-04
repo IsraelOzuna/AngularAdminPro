@@ -14,6 +14,7 @@ import { GraficoDonaComponent } from '../components/graficosDona/grafico-dona/gr
 
 // Account Settings
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
+import { PromesasComponent } from './promesas/promesas.component';
 @NgModule({
     declarations: [
         PagesComponent,
@@ -22,7 +23,8 @@ import { AccountSettingsComponent } from './account-settings/account-settings.co
         Graficas1Component,
         IncrementadorComponent,
         GraficoDonaComponent,
-        AccountSettingsComponent
+        AccountSettingsComponent,
+        PromesasComponent
     ],
     exports: [
         DashboardComponent,
