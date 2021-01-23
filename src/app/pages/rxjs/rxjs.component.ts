@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { Observable, Subscriber } from 'rxjs';
+import { Component, OnDestroy, OnInit } from '@angular/core';
+import { Observable, Subscriber, Subscription } from 'rxjs';
 import { retry, map, filter } from 'rxjs/operators';
 
 @Component({
@@ -7,10 +7,12 @@ import { retry, map, filter } from 'rxjs/operators';
   templateUrl: './rxjs.component.html',
   styles: []
 })
-export class RxjsComponent implements OnInit {
+export class RxjsComponent implements OnDestroy {
+
+  intervalSubs: Subscription;
 
   constructor() {
-    this.regresaObservable().pipe(
+    this.intervalSubs = this.regresaObservable().pipe(
       retry (2)
     )
     // Función Subscribe cuando se ejecuta un Next o recibo un string de datos
@@ -20,8 +22,8 @@ export class RxjsComponent implements OnInit {
       () => console.log ('El observador terminó!')
     );
   }
-
-  ngOnInit(): void {
+  ngOnDestroy(): void {
+    this.intervalSubs.unsubscribe();
   }
 
   regresaObservable(): Observable<any> {

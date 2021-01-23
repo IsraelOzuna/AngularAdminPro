@@ -16,6 +16,7 @@ import { GraficoDonaComponent } from '../components/graficosDona/grafico-dona/gr
 import { AccountSettingsComponent } from './account-settings/account-settings.component';
 import { PromesasComponent } from './promesas/promesas.component';
 import { RxjsComponent } from './rxjs/rxjs.component';
+import { MaterialFileInputModule } from 'ngx-material-file-input';
 @NgModule({
     declarations: [
         PagesComponent,
@@ -31,7 +32,8 @@ import { RxjsComponent } from './rxjs/rxjs.component';
     exports: [
         DashboardComponent,
         ProgressComponent,
-        Graficas1Component
+        Graficas1Component,
+        MaterialFileInputModule
     ],
     imports: [
         SharedModule,
